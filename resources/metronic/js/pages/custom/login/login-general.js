@@ -7,7 +7,6 @@ var KTLogin = function() {
     var _showForm = function(form) {
         var cls = 'login-' + form + '-on';
         var form = 'kt_login_' + form + '_form';
-
         _login.removeClass('login-forgot-on');
         _login.removeClass('login-signin-on');
         _login.removeClass('login-signup-on');
