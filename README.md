@@ -1,4 +1,6 @@
-# Metronic 7 + Laravel 7
+#LOADLIME 
+
+###### Metronic 7 + Laravel 7 + VUE + WEBPACK
 
 ### Introduction
 
@@ -34,13 +36,16 @@ npm install
 ```bash
 npm run dev
 ```
-
+change runtime javascript, css, media in resource folder 
+```bash
+npm run watch-poll
+```
 ```bash
 php artisan serve
 ```
 
 And navigate to generated server link (http://127.0.0.1:8000)
-
+or you can test it in xampp http server in public folder
 ### Copyright
-
+@2020 keyline Creative Service
 ...
