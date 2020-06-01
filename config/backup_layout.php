@@ -176,7 +176,7 @@ return [
 
         // Search
         'search' => [
-            'display' => false,
+            'display' => true,
             'layout' => 'dropdown', // offcanvas, dropdown
             'offcanvas' => [
                 'direction' => 'right'
@@ -185,7 +185,7 @@ return [
 
         // Notifications
         'notifications' => [
-            'display' => false,
+            'display' => true,
             'layout' => 'dropdown', // offcanvas, dropdown
             'dropdown' => [
                 'style' => 'dark' // light|dark
@@ -197,7 +197,7 @@ return [
 
         // Quick Actions
         'quick-actions' => [
-            'display' => false,
+            'display' => true,
             'layout' => 'dropdown', // offcanvas, dropdown
             'dropdown' => [
                 'style' => 'dark' // light|dark
@@ -221,12 +221,12 @@ return [
 
         // Languages
         'languages' => [
-            'display' => false
+            'display' => true
         ],
 
         // Cart
         'cart' => [
-            'display' => false,
+            'display' => true,
             'dropdown' => [
                 'style' => 'dark' // light|dark
             ]
@@ -234,7 +234,7 @@ return [
 
         // Quick Panel
         'quick-panel' => [
-            'display' => false,
+            'display' => true,
             'offcanvas' => [
                 'direction' => 'right'
             ]
@@ -242,17 +242,17 @@ return [
 
         // Chat
         'chat' => [
-            'display' => false,
+            'display' => true,
         ],
 
         // Page Toolbar
         'toolbar' => [
-            'display' => false
+            'display' => true
         ],
 
         // Scrolltop
         'scrolltop' => [
-            'display' => false
+            'display' => true
         ]
     ],
 

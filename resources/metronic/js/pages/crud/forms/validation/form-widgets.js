@@ -5,6 +5,11 @@ var KTFormWidgetsValidation = function () {
     var validator;
 
     var _initWidgets = function() {
+
+        $('#kt_datepicker_3').datepicker({
+            format: 'mm/dd/yyyy',
+            autoclose: true
+        });
         // Initialize Plugins
         // Datepicker
         $('#kt_datepicker').datepicker({

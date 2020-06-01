@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@index');
 Route::get('/new-enquiry', 'PagesController@enquiry_popoup');
 
+
 // Demo routes
 Route::get('/datatables', 'PagesController@datatables');
 Route::get('/ktdatatables', 'PagesController@ktDatatables');
@@ -24,6 +25,7 @@ Route::get('/select2', 'PagesController@select2');
 // Quick search dummy route to display html elements in search dropdown (header search)
 Route::get('/quick-search', 'PagesController@quickSearch')->name('quick-search');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');

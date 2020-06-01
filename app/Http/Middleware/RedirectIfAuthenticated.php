@@ -19,8 +19,14 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
+            if (Auth::user()->password_change_at == null)
+            {
+                return redirect('/password/change');
+            }
+
             return redirect(RouteServiceProvider::HOME);
         }
+
 
         return $next($request);
     }

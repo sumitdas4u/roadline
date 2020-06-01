@@ -102,5 +102,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="edufairfrontend" />
+    <orderEntry type="module" module-name="edufairfrontend" />
+    <orderEntry type="module" module-name="api" />
   </component>
 </module>

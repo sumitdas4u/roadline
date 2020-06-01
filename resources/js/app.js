@@ -13,7 +13,7 @@ import * as VueGoogleMaps from 'vue2-google-maps'
 
 Vue.use(VueGoogleMaps, {
     load: {
-        key: 'AIzaSyD0ihuSRzUXLhSG5MNI2V-0AGX5Dx6T4w0',
+        key: 'AIzaSyAvlP1l2JB-5J93HXQRKUAZ7lsqu9F5Uf4',
         libraries: 'places', // This is required if you use the Autocomplete plugin
         // OR: libraries: 'places,drawing'
         // OR: libraries: 'places,drawing,visualization'
@@ -50,8 +50,8 @@ Vue.use(VueGoogleMaps, {
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('test-component', require('./components/TestComponent.vue').default);
+
+Vue.component('enquiry-box', require('./layout/EnquiryComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -62,14 +62,24 @@ Vue.component('test-component', require('./components/TestComponent.vue').defaul
 
 
 
-
 const app = new Vue({
     el: '#app',
     data: {
+        description: 'Singapore',
+        latLng: {}
+    }
+    ,
+    methods: {
+        setDescription(description) {
+            this.description = description;
+        },
+        setPlace(place) {
+            if (!place) return
 
-        paths: [
-            [ {lat: 1.380, lng: 103.800}, {lat:1.380, lng: 103.810}, {lat: 1.390, lng: 103.810}, {lat: 1.390, lng: 103.800} ],
-            [ {lat: 1.382, lng: 103.802}, {lat:1.382, lng: 103.808}, {lat: 1.388, lng: 103.808}, {lat: 1.388, lng: 103.802} ],
-        ]
+            this.latLng = {
+                lat: place.geometry.location.lat(),
+                lng: place.geometry.location.lng(),
+            };
+        }
     }
 });
