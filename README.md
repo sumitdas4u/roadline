@@ -32,7 +32,10 @@ php artisan key:generate
 ```bash
 npm install
 ```
-
+For Db migration 
+```bash
+php artisan migrate
+```
 ```bash
 npm run dev
 ```
