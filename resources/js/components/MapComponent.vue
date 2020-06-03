@@ -77,7 +77,7 @@
         },
         watch: {
             pickupLoc: function() {
-                if (this.pickupLoc) {
+                if (this.pickupLoc.geometry.location.lat()) {
                     this.path.splice(0,1,
                         {
                             lat: this.pickupLoc.geometry.location.lat(),
@@ -90,7 +90,7 @@
             },
             dropLoc: function() {
 
-                if (this.dropLoc) {
+                if (this.dropLoc.geometry.location.lat()) {
 
                     this.path.splice(1,22,{
                             lat: this.dropLoc.geometry.location.lat(),

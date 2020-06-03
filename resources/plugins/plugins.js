@@ -75,7 +75,7 @@ require('bootstrap-maxlength/src/bootstrap-maxlength.js');
 require('../metronic/plugins/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js');
 
 // Bootstrap Select - The jQuery plugin that brings select elements into the 21st century with intuitive multiselection, searching, and much more: https://developer.snapappointments.com/bootstrap-select/
-require('bootstrap-select/dist/js/bootstrap-select.js');
+//require('bootstrap-select/dist/js/bootstrap-select.js');
 
 // Bootstrap Switch - Bootstrap switch/toggle is a simple component used for activating one of two predefined options: https://mdbootstrap.com/docs/jquery/forms/switch/
 require('bootstrap-switch/dist/js/bootstrap-switch.js');

@@ -28,19 +28,7 @@ class UserController extends Controller
       //  $this->currentUser =Auth::user();
     }
 
-    public function emailExists(Request $request)
-    {
-        $email=  User::where('email', '=', $request->email)
-            ->first();
 
-        if(!is_null($email)) {
-            return  ResponseBuilderHelper::result('user name already in use',200,true);
-        }else{
-            return  ResponseBuilderHelper::result('user name is new',200,false);
-
-        }
-
-    }
 
     function verifyMobile(Request $request){
 
@@ -66,6 +54,7 @@ class UserController extends Controller
 
     }
 
+
     function sendOtp(Request $request){
         $request->validate([
             'mobile' => 'required',
@@ -74,6 +63,7 @@ class UserController extends Controller
 
 
         $otp = rand(1000, 9999);
+        $otp =1234; //for devlopement
 
         $mobile_verification = MobileVerification::updateOrInsert(['mobile' => $request['mobile']],['mobile' => $request['mobile'],'code'=>$otp]);
         $sendSMS= new smsSenderHelper();

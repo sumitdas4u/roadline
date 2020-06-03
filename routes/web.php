@@ -29,3 +29,4 @@ Auth::routes(['verify' => true]);
 
 
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+Route::get('/password/change', 'PagesController@passwordChange')->name('password-change');

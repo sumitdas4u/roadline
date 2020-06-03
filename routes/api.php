@@ -20,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('get-otp', 'UserController@sendOtp');
 Route::post('match-otp', 'UserController@verifyMobile');
+Route::post('mobile-login', 'Auth\LoginController@loginMobile');
+Route::post('mobile-registration', 'Auth\RegisterController@createWithTempPassword');
+Route::get('goods-types', 'GoodsTypeController@goodstypes');
+Route::resource('enquiry', 'EnquiryController');

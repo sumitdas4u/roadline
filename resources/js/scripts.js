@@ -30,16 +30,16 @@ window.KTLayoutStretchedCard = require('../metronic/js/layout/base/stretched-car
 window.KTLayoutSubheader = require('../metronic/js/layout/base/subheader.js');
 
 // Metronic layout extended js
-window.KTLayoutChat = require('../metronic/js/layout/extended/chat.js');
-window.KTLayoutDemoPanel = require('../metronic/js/layout/extended/demo-panel.js');
-window.KTLayoutExamples = require('../metronic/js/layout/extended/examples.js');
-window.KTLayoutQuickActions = require('../metronic/js/layout/extended/quick-actions.js');
-window.KTLayoutQuickCartPanel = require('../metronic/js/layout/extended/quick-cart.js');
-window.KTLayoutQuickNotifications = require('../metronic/js/layout/extended/quick-notifications.js');
-window.KTLayoutQuickPanel = require('../metronic/js/layout/extended/quick-panel.js');
-window.KTLayoutQuickSearch = require('../metronic/js/layout/extended/quick-search.js');
+//window.KTLayoutChat = require('../metronic/js/layout/extended/chat.js');
+//window.KTLayoutDemoPanel = require('../metronic/js/layout/extended/demo-panel.js');
+//window.KTLayoutExamples = require('../metronic/js/layout/extended/examples.js');
+//window.KTLayoutQuickActions = require('../metronic/js/layout/extended/quick-actions.js');
+//window.KTLayoutQuickCartPanel = require('../metronic/js/layout/extended/quick-cart.js');
+//window.KTLayoutQuickNotifications = require('../metronic/js/layout/extended/quick-notifications.js');
+//window.KTLayoutQuickPanel = require('../metronic/js/layout/extended/quick-panel.js');
+//window.KTLayoutQuickSearch = require('../metronic/js/layout/extended/quick-search.js');
 window.KTLayoutQuickUser = require('../metronic/js/layout/extended/quick-user.js');
 window.KTLayoutScrolltop = require('../metronic/js/layout/extended/scrolltop.js');
-window.KTLayoutSearch = window.KTLayoutSearchOffcanvas = require('../metronic/js/layout/extended/search.js');
+//window.KTLayoutSearch = window.KTLayoutSearchOffcanvas = require('../metronic/js/layout/extended/search.js');
 
 require('../metronic/js/layout/initialize.js');

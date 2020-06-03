@@ -1,6 +1,17 @@
 @extends('layout.auth')
 
-@section('content')
+@section('content')   <select class="form-control form-control-solid form-control-lg selectpicker">
+    <optgroup label="Picnic" data-max-options="2">
+        <option>Mustard</option>
+        <option>Ketchup</option>
+        <option>Relish</option>
+    </optgroup>
+    <optgroup label="Camping" data-max-options="2">
+        <option>Tent</option>
+        <option>Flashlight</option>
+        <option>Toilet Paper</option>
+    </optgroup>
+</select>
     <!--begin::Signin-->
     <div class="login-form login-signin py-11">
         <!--begin::Form-->

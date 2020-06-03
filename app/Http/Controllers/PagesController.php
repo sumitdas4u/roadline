@@ -54,4 +54,12 @@ class PagesController extends Controller
     {
         return view('layout.partials.extras._quick_search_result');
     }
+    public function passwordChange()
+    {
+        $page_title = 'Password Change';
+        $page_description = 'Use strong password ';
+        return view('auth.passwords.change', compact('page_title', 'page_description'));
+
+
+    }
 }

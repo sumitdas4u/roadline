@@ -94,7 +94,7 @@
                                     <div class="row justify-content-center p-10">
                                         <div class="col-xl-12 col-xxl-10">
                                             <!--begin: Wizard Form-->
-                                            <form class="form mt-0 mt-lg-10 fv-plugins-bootstrap fv-plugins-framework" id="kt_form">
+                                            <form class="form mt-0 mt-lg-10 fv-plugins-bootstrap fv-plugins-framework"  v-on:submit.prevent="createEnquiry"    id="kt_form">
                                                 <!--begin: Wizard Step 1-->
                                                 <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
 
@@ -139,20 +139,17 @@
                                                     <div class="form-group fv-plugins-icon-container">
 
                                                         <label>Date</label>
-                                                        <div class="input-group date">
-                                                            <input @value="shippingDate"
-                                                                   @focus="shippingDate = $event.target.value"
-                                                                   readonly="true"
-                                                                   placeholder="Shipment Date"
-                                                                   name="shiping_date"
-                                                                   type="text" class="form-control"
-                                                                   id="kt_datepicker_3">
-                                                            <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
-                                                            </div>
-                                                        </div>
+
+                                                            <b-form-datepicker  class="form-control form-control-solid form-control-lg"
+                                                                                id="datepicker-buttons"
+                                                                                v-model="shippingDate" name="shiping_date"
+                                                                                today-button
+                                                                                reset-button
+                                                                                close-button
+                                                                                locale="en"
+                                                                                placeholder="Select Shipment Date"
+                                                            ></b-form-datepicker>
+
 
                                                         <div class="fv-plugins-message-container"></div>
                                                     </div>
@@ -160,16 +157,66 @@
 
                                                     <!--begin::Input-->
                                                     <div class="form-group fv-plugins-icon-container">
-                                                        <label>Truck Types</label>
-                                                        <input type="text" class="form-control form-control-solid form-control-lg" name="truck_type" placeholder="truck type"  >
-                                                        <span class="form-text text-muted">Please enter your truck type.</span>
-                                                        <div class="fv-plugins-message-container"></div></div>
+
+
+
+                                                        <b-dropdown id="dropdown-1" text="Select Truck Types"  block variant="warning" >
+                                                            <b-dropdown-item >
+
+                                                                <div class="d-flex align-items-center ">
+                                                                    <!--begin::Symbol-->
+                                                                    <div class="symbol symbol-40  mr-5">
+                <span class="symbol-label">
+                    <img src="https://truckguru.co.in/uploads/tata%20407.png" class="h-75 align-self-end" alt="">
+                </span>
+                                                                    </div>
+                                                                    <!--end::Symbol-->
+
+                                                                    <!--begin::Text-->
+                                                                    <div class="d-flex flex-column flex-grow-1 font-weight-bold">
+                                                                        <a href="#" class="text-dark text-hover-primary mb-1 font-size-lg">TATA 407 (2.5 TON)</a>
+                                                                        <span class="text-muted">8 Wheel, other, more details</span>
+                                                                    </div>
+                                                                    <!--end::Text-->
+
+
+                                                                </div>
+
+
+
+                                                            </b-dropdown-item>
+                                                            <b-dropdown-item>Second Action</b-dropdown-item>
+                                                            <b-dropdown-item>Third Action</b-dropdown-item>
+                                                            <b-dropdown-divider></b-dropdown-divider>
+
+                                                        </b-dropdown>
+
+
+
+                                                        <div class="fv-plugins-message-container"></div>
+                                                    </div>
+
+
+
+                                                    <div class="form-group fv-plugins-icon-container">
+                                                    <label>Goods Types</label> <br>
+                                                        <select  v-model="goods_types"
+                                                                 @input="goods_types = $event.target.value"
+
+                                                                 name="goods_types"
+                                                                 class="form-control form-control-solid form-control-lg " id="kt_select2_3"   multiple="multiple">
+                                                            <option v-for="goodType in goodTypes" :value="goodType.id">{{ goodType.name }}</option>
+                                                         </select>
+
+
+                                                    <div class="fv-plugins-message-container"></div>
+                                                </div>
                                                     <!--end::Input-->
                                                     <!--begin::Input-->
                                                     <div class="form-group fv-plugins-icon-container">
                                                         <label>Enter Weight (Kg)</label>
                                                         <input  @value="weight"    @input="weight = $event.target.value" type="text" class="form-control form-control-solid form-control-lg" name="weight" placeholder="Shipment Weight in KG"  >
-                                                        <span class="form-text "> <span class=" text-primary ">{{(weight/1000) }}</span>  ton</span>
+                                                        <span v-if="parseFloat(weight)" class="form-text "> <span class=" text-primary ">{{(weight/1000) }}</span>  ton</span>
                                                         <div class="fv-plugins-message-container"></div></div>
                                                     <!--end::Input-->
 
@@ -230,7 +277,7 @@
                                                     <!--begin::Input-->
                                                     <div class="form-group fv-plugins-icon-container">
                                                         <label>Company / Personal Name</label>
-                                                        <input type="text" class="form-control form-control-solid form-control-lg" name="name" placeholder="Your Name" >
+                                                        <input :readonly="mobileLogin" type="text" class="form-control form-control-solid form-control-lg" v-model="name" name="name" placeholder="Your Name" >
                                                         <span class="form-text text-muted">Please enter your  Name.</span>
                                                         <div class="fv-plugins-message-container"></div></div>
                                                     <!--end::Input-->
@@ -238,7 +285,7 @@
                                                     <!--begin::Input-->
                                                     <div class="form-group fv-plugins-icon-container">
                                                         <label>Email Address</label>
-                                                        <input type="text" class="form-control form-control-solid form-control-lg" name="email_a" placeholder="Email"  >
+                                                        <input :readonly="mobileLogin" type="text" class="form-control form-control-solid form-control-lg" v-model="email" name="email_a" placeholder="Email"  >
                                                         <span class="form-text text-muted">Please enter your email.</span>
                                                         <div class="fv-plugins-message-container"></div>
                                                     </div>
@@ -251,15 +298,30 @@
                                                 <!--begin: Wizard Step 4-->
                                                 <div class="pb-5" data-wizard-type="step-content">
                                                     <!--begin::Section-->
-
+                                                    <h4 class="mb-10 font-weight-bold text-danger">  Final fare will be shared by executives.</h4>
                                                     <h6 class="font-weight-bolder mb-3">
-                                                        Final fare will be shared by executives.
+                                                    Shipment Details
                                                     </h6>
                                                     <div class="text-dark-50 line-height-lg">
-                                                        <div>Pick Up : <span class="text-primary">Kolkata</span>  </div>
-                                                        <div>Pick Up : <span class="text-primary">Kolkata</span> </div>
-                                                        <div>Date : <span class="text-primary">Kolkata</span> </div>
-                                                        <div>Weight : <span class="text-primary">10 Kg</span>  </div>
+                                                        <div>Pick Up : <span class="text-primary">{{pickupAddress }}</span>  </div>
+                                                        <div>Drop : <span class="text-primary">{{dropAddress }}</span> </div>
+                                                        <div>Date : <span class="text-primary">{{shippingDate }}</span> </div>
+                                                        <div>Weight : <span class="text-primary">{{weight }} Kg</span>  </div>
+                                                       <!-- <div>Material Type : <span class="text-primary">-&#45;&#45;</span>  </div>
+                                                        <div>Truck Type : <span class="text-primary">-&#45;&#45;</span>  </div>-->
+
+
+                                                    </div>
+                                                    <br>
+                                                    <h6 class="font-weight-bolder mb-3">
+                                                        Personal/Company Details
+                                                    </h6>
+                                                    <div class="text-dark-50 line-height-lg">
+
+                                                        <div>Name : <span class="text-primary">{{name }}</span>  </div>
+                                                        <div>Email : <span class="text-primary">{{email }}</span>  </div>
+                                                        <div>Phone : <span class="text-primary">{{mobile }}</span>  </div>
+
                                                     </div>
 
                                                     <!--end::Section-->
@@ -333,7 +395,11 @@
     import autocompleteTextField from "../components/AutoComplete";
     import MapComponent from "../components/MapComponent";
     import ShipmentDetailsComponent from "../components/ShipmentDetailsFooter";
-
+    import Select2Component from "../components/Select2Complete";
+    import { DropdownPlugin } from 'bootstrap-vue'
+    Vue.use(DropdownPlugin)
+    import { FormDatepickerPlugin } from 'bootstrap-vue'
+    Vue.use(FormDatepickerPlugin)
 
     export default {
         name: "App",
@@ -341,10 +407,38 @@
         components: {
             autocompleteTextField,
             MapComponent,
-            ShipmentDetailsComponent
+            ShipmentDetailsComponent,
+            Select2Component
+        },
+        mounted() {
+            this.loadGoodsTypes();
+
+            let vm = this;
+            let select = $('#kt_select2_3'); // or document.querySelector('#unit');
+            setTimeout( function(){
+                $('#kt_datepicker_3').datepicker({
+                    format: 'dd-mm-yyyy',
+                    autoclose: true
+                });
+                $('#kt_select2_3')
+                    .select2({
+                        placeholder: 'Select good types'
+
+                    })
+                    .on('change', function () {
+                       // console.log(select.val());
+                        vm.goods_types=select.val();
+                        vm.$emit('input', select.val())
+                    })
+
+            },1000);
+
+
+
         },
         data: function() {
             return {
+                goodTypes:[],
                 pickupLocation: null,
                 dropLocation:null,
                 shippingDate:'',
@@ -355,7 +449,13 @@
                 smsValidCount:0,
                 otpsend:false,
                 verifyCode:'',
-                matchCode:false
+                matchCode:false,
+                name:'',
+                email:'',
+                uid:'',
+                mobileLogin:false,
+                goods_types:[],
+                select2data:[]
             };
         },
         watch: {
@@ -371,17 +471,21 @@
             },
             verifyCode(value){
                 // binding this to the data value in the email input
-             /*   this.verifyCode = value;
+               this.verifyCode = value;
                 if (value.length===4) {
-                   // this.sentOTP(value);
-                }else
-                {
-                    this.matchCode = false;
-                }*/
+                   this.checkOTP(value);
+                }
             }
         },
 
         methods: {
+
+
+            loadGoodsTypes() {
+                var parent = this;
+
+                axios.get('/api/goods-types').then(response => parent.goodTypes =response.data.data).catch(error => console.log(error));
+            },
             updatePickup(variable) {
                 this.pickupLocation= variable;
                 this.pickupAddress= variable.formatted_address;
@@ -391,6 +495,33 @@
                 this.dropAddress= variable.formatted_address;
 
             },
+
+            createEnquiry() {
+
+                var parent = this;
+                axios.post('/api/enquiry', {
+                    truck_type_id:1,
+                    goods_type_id:parent.goods_types,
+                    pickup_address:parent.pickupAddress,
+                    drop_address:parent.dropAddress,
+                    shipment_date:parent.shippingDate,
+                    shipment_weight:parent.weight,
+                    mobile_login:parent.mobileLogin,
+                    name:parent.name,
+                    email:parent.email,
+                    mobile:parent.mobile,
+                    user_id:parent.uid,
+                })
+                    .then(function (response) {
+                        console.log(response);
+
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+
+                    });
+            },
+
 
             async sentOTP(mobile) {
                 this.otpsend = false;
@@ -410,24 +541,36 @@
                         });
             },
             async checkOTP(code) {
-                this.matchCode = false;
-
                 var parent = this;
-                axios.post('/api/match-otp', {
+                parent.matchCode = false;
+
+
+                axios.post('/api/mobile-login', {
                     mobile:parent.mobile,
                     code:code
                 })
                     .then(function (response) {
-                        console.log('success');
-                        parent.matchCode = true;
+
+                        if (response.status === 200) {
+
+                            parent.name= response.data.data.name;
+                            parent.email= response.data.data.email;
+                            parent.uid= response.data.data.id;
+                            parent.mobileLogin=true;
+                        }else{
+                            parent.name='';
+                            parent.email='';
+                            parent.mobile='';
+                            parent.uid='';
+                        }
                     })
                     .catch(function (error) {
                         console.log('error');
-
                     });
             }
         }
     };
-</script>
 
+
+</script>
 

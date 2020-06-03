@@ -11,10 +11,7 @@ var KTWizard4 = function () {
 	// Private functions
 	var initWizard = function () {
 
-        $('#kt_datepicker_3').datepicker({
-            format: 'dd/mm/yyyy',
-            autoclose: true
-        });
+
 
 		// Initialize form wizard
 		_wizard = new KTWizard(_wizardEl, {
@@ -34,7 +31,7 @@ var KTWizard4 = function () {
 					_wizard.goNext();
 					KTUtil.scrollTop();
 				} else {
-				    alert();
+
 					Swal.fire({
 						text: "Sorry, looks like there are some errors detected, please try again.",
 						icon: "error",
@@ -83,10 +80,7 @@ var KTWizard4 = function () {
                     },
                     shiping_date: {
 						validators: {
-                            date: {
-                                format: 'DD/MM/YYYY',
-                                message: 'The value is not a valid date',
-                            },
+
 							notEmpty: {
 								message: 'Select shipping date '
 							}
@@ -103,6 +97,14 @@ var KTWizard4 = function () {
                             }
 						}
 					}
+					,
+                    goods_types: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Please select at least one good type'
+                            }
+                        }
+                    }
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),

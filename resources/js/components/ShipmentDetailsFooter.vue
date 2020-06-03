@@ -30,7 +30,7 @@
                                 appear
                                 enter-active-class="animated bounceIn"
                                 leave-active-class="animated bounceOut" >
-                        <div  :key="this.pickupLoc"  v-if="this.pickupLoc" class="d-flex align-items-center flex-lg-fill mr-5 my-1">
+                        <div  :key="this.pickupLoc.formatted_address"  v-if="this.pickupLoc" class="d-flex align-items-center flex-lg-fill mr-5 my-1">
                         <span class="mr-4">
                             <i class="flaticon-map-location icon-2x text-muted font-weight-bold"></i>
                         </span>
@@ -46,7 +46,7 @@
                                 appear
                                 enter-active-class="animated bounceIn"
                                 leave-active-class="animated bounceOut" >
-                        <div  :key= "this.dropLoc"  v-if="this.dropLoc" class="d-flex align-items-center flex-lg-fill mr-5 my-1">
+                        <div  :key= "this.dropLoc.formatted_address"  v-if="this.dropLoc" class="d-flex align-items-center flex-lg-fill mr-5 my-1">
                         <span class="mr-4">
                             <i class="flaticon-placeholder-3 icon-2x text-muted font-weight-bold"></i>
                         </span>

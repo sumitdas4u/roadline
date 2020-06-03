@@ -3,14 +3,21 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Helper\ResponseBuilderHelper;
 use App\Providers\RouteServiceProvider;
+use App\Traits\MobileAuth;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+
 use Illuminate\Support\Facades\Validator;
+
 
 class RegisterController extends Controller
 {
+    use MobileAuth;
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -68,6 +75,21 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'password_change_at' => Carbon::now()->toDateTimeString(),
         ]);
     }
+
+    protected function createWithTempPassword(Request $request)
+    {
+
+        $user = $this->createWithMobile($request);
+        if(!empty($user)){
+            return  ResponseBuilderHelper::result('New User Created with temp password',200,$user);
+        }else{
+            return  ResponseBuilderHelper::result('something went wrong!!.',403);
+        }
+
+
+    }
+
 }
