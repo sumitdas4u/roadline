@@ -1,6 +1,7 @@
 @extends('layout.auth')
 
-@section('content')   <select class="form-control form-control-solid form-control-lg selectpicker">
+@section('content')
+    <select class="form-control form-control-solid form-control-lg selectpicker">
     <optgroup label="Picnic" data-max-options="2">
         <option>Mustard</option>
         <option>Ketchup</option>

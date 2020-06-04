@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/home', 'PagesController@index');
 Route::get('/new-enquiry', 'PagesController@enquiry_popoup');
 
-
+Route::get('change-password', 'Auth\ChangePasswordController@index');
+Route::post('change-password', 'Auth\ChangePasswordController@store')->name('change.password');
 // Demo routes
 Route::get('/datatables', 'PagesController@datatables');
 Route::get('/ktdatatables', 'PagesController@ktDatatables');
@@ -27,6 +28,14 @@ Route::get('/quick-search', 'PagesController@quickSearch')->name('quick-search')
 
 Auth::routes(['verify' => true]);
 
+/*Route::group(['middleware'=>'user'], function()
+{
 
+    //Write you route here
+}*/
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 Route::get('/password/change', 'PagesController@passwordChange')->name('password-change');
+Route::get('/owner/registration', 'PagesController@ownerRegistration');
+Route::post('/owner/registration', 'Auth\RegisterController@createOwner')->name('register-owner');
+
+

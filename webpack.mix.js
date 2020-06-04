@@ -17,6 +17,27 @@ const rimraf = require('rimraf');
  |
  */
 
+// home theme mix
+ mix.styles([
+    'resources/home-theme/css/home.css',
+    'resources/home-theme/css/style.css',
+    'resources/home-theme/css/nav.css',
+    'resources/home-theme/css/slick.css',
+    'resources/home-theme/css/jquery-ui.css',
+    'resources/home-theme/css/jquery.mCustomScrollbar.css',
+    'resources/home-theme/css/slectbox.css',
+], 'public/css/home.css');
+mix.scripts([
+    'resources/home-theme/js/jquery.min.js',
+    'resources/home-theme/js/common.js',
+    'resources/home-theme/js/slick.min.js',
+    'resources/home-theme/js/nav.js',
+    'resources/home-theme/js/home.js',
+    'resources/home-theme/js/jquery-ui.js'
+], 'public/js/home.js');
+
+mix.copyDirectory('resources/home-theme/images', 'public/images');
+
 // Default
 mix.js('resources/js/app.js', 'public/js')
     .scripts('resources/js/config.js', 'public/js/config.js')
@@ -32,7 +53,7 @@ mix.js('resources/js/app.js', 'public/js')
 mix.sass('resources/plugins/plugins.scss', 'public/plugins/global/plugins.bundle.css').then(() => {
     // remove unused preprocessed fonts folder
     rimraf(path.resolve('public/fonts'), () => {});
-    rimraf(path.resolve('public/images'), () => {});
+
 })
     // .setResourceRoot('./')
     .options({processCssUrls: false})

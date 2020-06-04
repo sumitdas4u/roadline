@@ -12,6 +12,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -71,16 +72,43 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'password_change_at' => Carbon::now()->toDateTimeString(),
+            'role' => 0
         ]);
+    }
+
+    protected function createOwner(Request $request)
+    {
+        $validator=  Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        if($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+             $user= User::create([
+                'name' => $request['name'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
+                'password_change_at' => Carbon::now()->toDateTimeString(),
+                'role'=>1
+            ]);
+        auth()->login($user);
+        auth()->user()->sendEmailVerificationNotification();
+        return redirect()->to('dashboard');
     }
 
     protected function createWithTempPassword(Request $request)
     {
+
+
 
         $user = $this->createWithMobile($request);
         if(!empty($user)){

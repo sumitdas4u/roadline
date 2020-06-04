@@ -62,4 +62,12 @@ class PagesController extends Controller
 
 
     }
+
+    public function ownerRegistration()
+    {
+
+    return view('auth.register_owner');
+
+
+    }
 }
