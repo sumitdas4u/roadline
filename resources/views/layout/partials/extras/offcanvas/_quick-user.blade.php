@@ -43,7 +43,7 @@
 		{{-- Nav --}}
 		<div class="navi navi-spacer-x-0 p-0">
 		    {{-- Item --}}
-		    <a href="#" class="navi-item">
+		    <a href="{{ route('password-change') }}" class="navi-item">
 		        <div class="navi-link">
 		            <div class="symbol symbol-40 bg-light mr-3">
 		                <div class="symbol-label">
@@ -52,7 +52,7 @@
 		            </div>
 		            <div class="navi-text">
 		                <div class="font-weight-bold">
-		                    My Profile
+		                    Change Password
 		                </div>
 		                <div class="text-muted">
 		                    Account settings and more

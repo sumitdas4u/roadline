@@ -4,13 +4,13 @@ return [
 
     'items' => [
         // Dashboard
-        [
+     /*   [
             'title' => 'Dashboard',
             'root' => true,
             'icon' => 'media/svg/icons/Design/Layers.svg', // or can be 'flaticon-home' or any flaticon-*
             'page' => '/',
             'new-tab' => false,
-        ],
+        ],*/
 
         // Custom
         [
@@ -19,12 +19,14 @@ return [
         [
             'title' => 'Enquiry List',
             'icon' => 'media/svg/icons/Layout/Layout-4-blocks.svg',
+            'page' => 'enquiry',
             'bullet' => 'line'
 
         ],
         [
             'title' => 'Quotations',
             'icon' => 'media/svg/icons/Shopping/Barcode-read.svg',
+            'page' => 'quotation',
             'bullet' => 'dot'
         ],
 
@@ -36,6 +38,7 @@ return [
             'title' => 'Payment Details',
             'desc' => '',
             'icon' => 'media/svg/icons/Design/Bucket.svg',
+            'page' => 'payment',
             'bullet' => 'dot'
         ],
         [

@@ -15,7 +15,7 @@ class ChangePasswordAtToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dateTime('password_change_at')->change();
-            $table->integer('role');
+            $table->integer('role')->nullable()->default(0);
         });
     }
 

@@ -51,7 +51,8 @@ Vue.use(VueGoogleMaps, {
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 
-Vue.component('enquiry-box', require('./layout/EnquiryComponent.vue').default);
+ Vue.component('enquiry-box', require('./layout/EnquiryComponent.vue').default);
+Vue.component('home-search-box', require('./layout/HomeSearchComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -63,23 +64,5 @@ Vue.component('enquiry-box', require('./layout/EnquiryComponent.vue').default);
 
 
 const app = new Vue({
-    el: '#app',
-    data: {
-        description: 'Singapore',
-        latLng: {}
-    }
-    ,
-    methods: {
-        setDescription(description) {
-            this.description = description;
-        },
-        setPlace(place) {
-            if (!place) return
-
-            this.latLng = {
-                lat: place.geometry.location.lat(),
-                lng: place.geometry.location.lng(),
-            };
-        }
-    }
+    el: '#app'
 });

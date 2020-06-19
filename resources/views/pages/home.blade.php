@@ -2,41 +2,17 @@
 
 @section('content')
 
+    <link href="{{ asset('css/pages/enquiry/new_enquiry_page.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/pages/wizard/wizard-4.css') }}" rel="stylesheet" type="text/css" />
+    <!--end::Page Custom Styles-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+
     <div class="banner-box">
-        <div class="container">
-            <div class="box876">
-                <h2>Book A Truck &</h2>
-                <h3>FULL Load Service</h3>
-                <p>India’s 1st Online Booking Platform with Live Pricing</p>
-                <form>
-                    <div class="form-box">
-
-
-                        <aside >
-                            <input class="textBox date " type="text" id="datepicker5"  value="SELECT DATE">
-
-                        </aside>
-
-                        <aside >
-                            <input class="textBox date " type="text" id="datepicker5"  value="SELECT DATE">
-
-
-                        </aside>
-                        <aside><input class="textBox date " type="text" id="datepicker5"  value="SELECT DATE"></aside>
-                        <aside >
-
-                            <input class="textBox date " type="text" id="datepicker5"  value="SELECT DATE">
-
-
-                        </aside>
-
-
-                        <aside><input type="submit" class="submit22" value="CHECK INSTANT PRICE"></aside>
-
-
-                    </div>
-                </form>
-            </div>
+        <div id="app" class="container">
+        <home-search-box></home-search-box>
 
 
         </div>
@@ -168,5 +144,17 @@
         </div>
     </div>
     <div class="clear"></div>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('plugins/global/plugins.bundle.js') }} "></script>
+    <script src="{{ asset('plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+    <script src="{{ asset('js/scripts.bundle.js') }}"></script>
+    <!--end::Global Theme Bundle-->
 
+    <!--begin::Page Vendors(used by this page)-->
+
+
+    <!--end::Page Vendors-->
+    <!--begin::Page Scripts(used by this page)-->
+
+    <script src="{{ asset('js/pages/custom/wizard/wizard-4.js') }} "></script>
 @endsection

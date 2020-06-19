@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="3.7.98.57" id="44b40870-b17a-456b-94be-9a9c0e230a0f" keyPath="C:\Users\sumit\Desktop\SapeEvents-Prod-Web-SapeEvents-Keypair.ppk" port="2223" customName="EDUFAIR AWS" nameFormat="CUSTOM" username="sapeevents" />
+      <sshConfig host="3.7.98.57" id="d08927e0-380a-4871-95c4-26c6dc7163a7" keyPath="C:\Users\sumit\Desktop\SapeEvents-Prod-Web-SapeEvents-Keypair.ppk" port="2223" customName="EDUFAIR AWS" nameFormat="CUSTOM" username="sapeevents" />
+    </configs>
+  </component>
+</project>

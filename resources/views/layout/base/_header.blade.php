@@ -19,7 +19,7 @@
             <div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
                 @if(config('layout.aside.self.display') == false)
                     <div class="header-logo">
-                        <a href="{{ url('/') }}">
+                        <a href="{{ route('enquiry')}} ">
                             <img alt="Logo" src="{{ asset('media/logos/'.$kt_logo_image) }}"/>
                         </a>
                     </div>

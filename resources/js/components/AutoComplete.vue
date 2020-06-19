@@ -5,8 +5,9 @@
 
         <GmapAutocomplete
 
+            :placeholder="placeholder"
 
-            class="form-control form-control-solid form-control-lg"
+            class="form-control form-control-solid form-control-lg "
             :options="{
             fields: [],
         types: ['(cities)'],
@@ -24,7 +25,12 @@
 <script>
     export default {
 
+        props:  {
+            placeholder: {
+                type: String
+            }
 
+        },
         methods: {
             setPlace(place) {
 

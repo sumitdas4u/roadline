@@ -40,17 +40,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
         {{-- Includable CSS --}}
         @yield('styles')
-    </head>
-
-    <body {{ Metronic::printAttrs('body') }} {{ Metronic::printClasses('body') }}>
-
-        @if (config('layout.page-loader.type') != '')
-            @include('layout.partials._page-loader')
-        @endif
-
-        @include('layout.base._layout')
-
-        <script>var HOST_URL = "{{ route('quick-search') }}";</script>
 
         {{-- Global Config (global config for global JS scripts) --}}
         <script>
@@ -61,9 +50,22 @@ License: You must have a valid license purchased only from themeforest(the above
         @foreach(config('layout.resources.js') as $script)
             <script src="{{ asset($script) }}" type="text/javascript"></script>
         @endforeach
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         {{-- Includable JS --}}
         @yield('scripts')
+    </head>
+
+    <body {{ Metronic::printAttrs('body') }} {{ Metronic::printClasses('body') }}>
+
+        @if (config('layout.page-loader.type') != '')
+            @include('layout.partials._page-loader')
+        @endif
+
+        @include('layout.base._layout')
+
+
+
+
 
     </body>
 </html>

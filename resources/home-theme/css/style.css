@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=RobotoRoboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
 /*font-family: 'Roboto', sans-serif;*/
 
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Roboto:wght@100&display=swap');
@@ -11,7 +11,7 @@ font-family: 'Roboto', sans-serif;*/
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap');
 /* thin,light,regular,bold,black */
-body{padding:0; margin:0; font-family: 'Poppins, Helvetica', sans-serif; font-size:14px; line-height:18px; }
+body{padding:0  !important;   height: auto!important; background:white!important; margin:0; font-family: 'Poppins, Helvetica', sans-serif; font-size:14px; line-height:18px; }
 input, textarea, label, samp, big, small{font-family: 'Roboto', sans-serif;}
 div, p, form, ul, li, h1, h2, h3, h4, h5, h6, a, span, form, img, br, input, textarea, label, samp, figure, section, aside, article, big, small{padding:0; margin:0;}
 a, input{text-decoration:none; outline:none;}
@@ -43,8 +43,8 @@ input[type="button"],input[type="submit"],.input-checkbox{-webkit-appearance:non
 
 
 
-header{ width: 100%; height: auto; display: block; float: left; border-top: 8px solid #fdbb2d; background: #ffffff;}
-header:after{ content: ''; clear: both; line-height: 0; }
+.home_page header{ width: 100%; height: auto; display: block; float: left; border-top: 8px solid #fdbb2d; background: #ffffff;}
+.home_page  header:after{ content: ''; clear: both; line-height: 0; }
 .logo-box{ max-width:326px; width: 26%; height: auto; float: left; margin-top: 11px;  }
 .logo-box img{ width: 100%; }
 
@@ -65,7 +65,7 @@ header:after{ content: ''; clear: both; line-height: 0; }
 .menu-box-top figure ul li{width: auto; height: auto; float: left; display: inline-block; padding: 0 5px;}
 .menu2{width: auto; height:52px; float: right; display: block;}
 
-footer{width: 100%; height: auto; display: block; float: left; border-top: 9px solid #fdbb2d; background: #000; position: relative; margin-top: 10px; padding: 50px 0 0px 0; box-sizing: border-box;}
+.home_page footer{width: 100%; height: auto; display: block; float: left; border-top: 9px solid #fdbb2d; background: #000; position: relative; margin-top: 10px; padding: 50px 0 0px 0; box-sizing: border-box;}
 .footer-box{width: 100%; height: auto; float: left;  text-align: center; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; -webkit-flex-wrap: wrap; margin-bottom: 50px;}
 .footer-box-left{ width: 26%; height: auto; float: left; padding-right: 6%; box-sizing: border-box; border-right: 1px solid rgba(255,255,255,0.30);}
 .footer-box-left span{ width: 237px; height: 77px; float: left; display: block; margin-bottom: 20px;}

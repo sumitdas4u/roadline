@@ -17,6 +17,10 @@
     @foreach(config('layout.home_resources.css') as $style)
         <link href="{{   asset($style) }}" rel="stylesheet" type="text/css"/>
     @endforeach
+    {{-- Global Theme Styles (used by all pages) --}}
+    @foreach(config('layout.resources.css') as $style)
+        <link href="{{ config('layout.self.rtl') ? asset(Metronic::rtlCssPath($style)) : asset($style) }}" rel="stylesheet" type="text/css"/>
+    @endforeach
 
 
     {{-- Includable CSS --}}
@@ -28,14 +32,15 @@
 
 
 </head>
-<body class="transition2">
-<header>
+<body class="transition2 ">
+<div class="home_page">
+<header >
     <div class="container">
         <div class="logo-box"><a href="#"><img src="images/Loadline-logo.svg" alt=""></a></div>
         <div class="menu-box">
             <div class="menu-box-top">
                 <aside><ul>
-                        <li><a href="#">LOGIN</a></li><li><a href="#">REGISTER</a></li></ul></aside>
+                        <li><a href="{{ route('login') }}">LOGIN</a></li><li><a href="{{ route('register') }}">REGISTER</a></li></ul></aside>
                 <figure><ul>
                         <li><a href="#" target="_blank"><img src="images/facebook.png"></a></li>
                         <li><a href="#" target="_blank"><img src="images/t.png"></a></li>
@@ -52,7 +57,7 @@
                             <li><a href="#">Services</a></li>
                             <li><a href="#">Refer and Earn</a></li>
                             <li><a href="#">Contact</a></li>
-                            <li><a href="#">Fleet Owners</a></li>
+                            <li><a href="{{ route('register-owner') }}">Fleet Owners</a></li>
                             <li><a href="#">FAQ</a></li>
                         </ul>
 
@@ -61,9 +66,9 @@
         </div>
     </div>
 </header>
-
+</div>
 @yield('content')
-
+<div class="home_page">
 <footer>
     <div class="container">
         <div class="footer-box">
@@ -124,7 +129,7 @@
     </div>
 
 </footer>
-
+</div>
 
 
 

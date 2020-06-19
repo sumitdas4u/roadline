@@ -163,6 +163,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Intervention Package Service Providers...
+         */
+        Intervention\Image\ImageServiceProvider::class,
+
+        /*
          * Package Service Providers...
          */
         App\Providers\MetronicServiceProvider::class,
@@ -227,6 +232,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // Metronic Aliases
+        'Image' => Intervention\Image\Facades\Image::class,
 
         // Metronic Aliases
         'Metronic' => App\Classes\Theme\Metronic::class,

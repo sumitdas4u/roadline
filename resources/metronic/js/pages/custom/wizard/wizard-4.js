@@ -78,33 +78,16 @@ var KTWizard4 = function () {
                             }
                         }
                     },
+
                     shiping_date: {
-						validators: {
-
-							notEmpty: {
-								message: 'Select shipping date '
-							}
-						}
-					},
-                    weight: {
-						validators: {
-							notEmpty: {
-								message: 'Please enter weight'
-							},
-                            numeric: {
-
-                                message: 'Only number is accepted',
-                            }
-						}
-					}
-					,
-                    goods_types: {
                         validators: {
+
                             notEmpty: {
-                                message: 'Please select at least one good type'
+                                message: 'Select shipping date '
                             }
                         }
-                    }
+                    },
+
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
@@ -114,6 +97,52 @@ var KTWizard4 = function () {
 			}
 		));
 
+        _validations.push(FormValidation.formValidation(
+            _formEl,
+            {
+                fields: {
+                    category: {
+                        validators: {
+
+                            notEmpty: {
+                                message: 'Select Category'
+                            }
+                        }
+                    },
+                    truck_type: {
+                        validators: {
+
+                            notEmpty: {
+                                message: 'Select Truck Type'
+                            }
+                        }
+                    },
+                    weight: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Please enter weight'
+                            },
+                            numeric: {
+
+                                message: 'Only number is accepted',
+                            }
+                        }
+                    },
+                    goods_types: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Please select at least one good type'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    trigger: new FormValidation.plugins.Trigger(),
+                    bootstrap: new FormValidation.plugins.Bootstrap()
+
+                }
+            }
+        ));
 		// Step 2
 		_validations.push(FormValidation.formValidation(
 			_formEl,
@@ -176,45 +205,35 @@ var KTWizard4 = function () {
 			_formEl,
 			{
 				fields: {
-					ccname: {
+					name: {
 						validators: {
 							notEmpty: {
 								message: 'Credit card name is required'
 							}
 						}
 					},
-					ccnumber: {
+					email: {
 						validators: {
 							notEmpty: {
-								message: 'Credit card number is required'
+								message: 'email is required'
 							},
-							creditCard: {
-								message: 'The credit card number is not valid'
-							}
-						}
-					},
-					ccmonth: {
-						validators: {
-							notEmpty: {
-								message: 'Credit card month is required'
-							}
-						}
-					},
-					ccyear: {
-						validators: {
-							notEmpty: {
-								message: 'Credit card year is required'
-							}
-						}
-					},
-					cccvv: {
-						validators: {
-							notEmpty: {
-								message: 'Credit card CVV is required'
-							},
-							digits: {
-								message: 'The CVV value is not valid. Only numbers is allowed'
-							}
+                            emailAddress: {
+                                message: 'The value is not a valid email address'
+                            },
+                            remote: {
+                                url: 'api/email-exists',
+                                method: 'POST',
+                                // Send { username: 'its value', email: 'its value' } to the back-end
+                                data: function() {
+                                    return {
+                                        email: _formEl.querySelector('[name="email"]').value,
+                                        code: _formEl.querySelector('[name="code"]').value
+
+                                    };
+                                },
+                                message: 'Email already register. use another email '
+
+                            }
 						}
 					}
 				},

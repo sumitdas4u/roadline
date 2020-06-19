@@ -8,9 +8,9 @@
 
 
                 <!--begin: Items-->
-                <div class="d-flex align-items-center ">
+                <div class="d-flex align-items-baseline ">
                     <!--begin: Item-->
-                    <transition mode="out-in"
+                  <transition mode="out-in"
                                 appear
                                 enter-active-class="animated bounceIn"
                                 leave-active-class="animated bounceOut" >
@@ -19,8 +19,8 @@
                             <i class="flaticon-clock-2 icon-2x text-muted font-weight-bold"></i>
                         </span>
                             <div class="d-flex flex-column text-dark-75">
-                                <span class="font-weight-bolder font-size-h6 text-primary">{{this.distanceResults.duration.text }} </span>
-                                <span class="  font-size-sm">{{this.distanceResults.distance.text }} </span>
+                                <span class="font-weight-bolder font-size-h6 text-primary">{{this.distanceResults.distance.text }} </span>
+
 
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                         </div>
 
                     </transition>
-                    <transition mode="out-in"
+                 <!--   <transition mode="out-in"
                                 appear
                                 enter-active-class="animated bounceIn"
                                 leave-active-class="animated bounceOut" >
@@ -89,7 +89,7 @@
                             </div>
                         </div>
 
-                    </transition>
+                    </transition>-->
 
                     <!--end: Item-->
 

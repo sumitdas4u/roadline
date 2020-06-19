@@ -2,12 +2,25 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="2fb97ff3-565d-479d-8e78-5ecec33d8f43" name="edufair" url="http://edufaironline.com">
-        <fileTransfer host="edufaironline.com" port="21">
+      <webServer id="2fb97ff3-565d-479d-8e78-5ecec33d8f43" name="edufair" url="http://keylines.net">
+        <fileTransfer host="keylines.net" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="96961551-9871-4267-95f2-561a1589ef43" name="EDUFAIR AWS" url="http://3.7.98.57">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="3.7.98.57" port="2223" sshConfigId="d08927e0-380a-4871-95c4-26c6dc7163a7" sshConfig="EDUFAIR AWS" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="30e60669-d5fb-4204-a253-eba426144167" name="loadline" url="http://loadline.in">
+        <fileTransfer host="loadline.in" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
         </fileTransfer>
       </webServer>
     </option>

@@ -1,18 +1,7 @@
 @extends('layout.auth')
 
 @section('content')
-    <select class="form-control form-control-solid form-control-lg selectpicker">
-    <optgroup label="Picnic" data-max-options="2">
-        <option>Mustard</option>
-        <option>Ketchup</option>
-        <option>Relish</option>
-    </optgroup>
-    <optgroup label="Camping" data-max-options="2">
-        <option>Tent</option>
-        <option>Flashlight</option>
-        <option>Toilet Paper</option>
-    </optgroup>
-</select>
+
     <!--begin::Signin-->
     <div class="login-form login-signin py-11">
         <!--begin::Form-->
@@ -80,6 +69,7 @@
             <!--begin::Action-->
             <div class="text-center pt-2">
                 <button id="kt_login_signin_submit" class="btn btn-dark font-weight-bolder font-size-h6 px-8 py-4 my-3">Sign In</button>
+
             </div>
             <!--end::Action-->
         </form>

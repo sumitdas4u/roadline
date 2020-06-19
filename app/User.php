@@ -37,4 +37,20 @@ class User extends Authenticatable  implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password_change_at' => 'date',
     ];
+
+    public function hasRole($role)
+    {
+        if($role=='admin'){
+            $id=2;
+        }elseif($role=='owners'){
+            $id=1;
+        }else{
+            $id=0;
+        }
+
+        if ($this->role == $id) {
+            return true;
+        }
+        return false;
+    }
 }

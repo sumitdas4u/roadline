@@ -29,7 +29,7 @@ trait MobileAuth {
                 return null;
             }
             // Set Auth Details
-            Auth::login($user);
+           // Auth::login($user);
             return $user ;
         }else{
             return  null;
@@ -57,6 +57,7 @@ trait MobileAuth {
             'mobile' => $request['mobile'],
             'password' => Hash::make($temp_password),
             'password_change_at' =>null,
+            'role'=>0
         ]);
         //data to be used in mail
         $data['subject']            = 'Login Details'; //$this->getEmailSubject();

@@ -31,15 +31,20 @@
     <div class="mobile-toolbar">
 
         @if (config('layout.aside.self.display'))
-            <button class="mobile-toggle mobile-toggle-left" id="kt_aside_mobile_toggle"><span></span></button>
+            <button class="btn p-0 burger-icon burger-icon-left" id="kt_aside_mobile_toggle">
+                <span></span>
+            </button>
+         
         @endif
 
-        @if (config('layout.header.menu.self.display'))
-            <button class="mobile-toggle ml-3" id="kt_header_mobile_toggle"><span></span></button>
-        @endif
 
-        <button class="topbar-toggle ml-3" id="kt_header_mobile_topbar_toggle">
-            {{ Metronic::getSVG('media/svg/icons/General/User.svg') }}
-        </button>
+            <button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
+					<span class="svg-icon svg-icon-xl">
+						<!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
+		{{ Metronic::getSVG('media/svg/icons/General/User.svg') }}
+                        <!--end::Svg Icon-->
+					</span>
+            </button>
+
     </div>
 </div>

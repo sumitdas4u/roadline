@@ -9,6 +9,7 @@
 .form-box{ width: 100%; height: auto; float: left; display: block; padding-top: 20px;}
 .form-box aside{ width: 50%; height: 70px; float: left; display: block; padding-right: 20px; margin-bottom: 20px;}
 
+/*
 
 .form-box aside input[type="text"]{font-family: 'Poppins, Helvetica', sans-serif; border:1px solid #efefef; width:100%; height:70px; float:left;  background:#efefef;  text-align:left; vertical-align:top; color:#595959; font-size:17px; font-weight:400; line-height: 70px; outline:none; padding:0px 10px 0 20px; box-sizing:border-box; border-radius: 3px; display: block;}
 .form-box aside input[type="text"]:focus ,
@@ -17,15 +18,22 @@
 .textBox {font-family: 'Poppins, Helvetica', sans-serif; border:1px solid #efefef; width:100%; height:70px; float:left;  background:#efefef url(../images/date-icon.png) 95% 23px no-repeat!important;  text-align:left; vertical-align:top; color:#595959; font-size:21px; font-weight:400; line-height: 70px; outline:none; padding:0px 10px 0 20px; box-sizing:border-box; border-radius: 3px; display: block;}
 
 .form-box .custom-select { color: #595959; font-size: 17px;height: 70px;background: #efefef url(../images/downArrow4.png) no-repeat 95% 29px;
- /*   background: #fff url(data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E) no-repeat right .75rem center;*/
+ !*   background: #fff url(data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E) no-repeat right .75rem center;*!
 }
 .form-box select.form-control:not([size]):not([multiple]) { height: 70px;
-    /* height: calc(2.25rem + 2px); */
+    !* height: calc(2.25rem + 2px); *!
 }
 
 .form-box .custom-select:focus {
 	border-color: #fdbb2d;}
 
+*/
+
+.form-control-lg, .form-control, .btn.btn-warning, .input-group {
+    height:70px !important;
+ font-size:19px !important;
+
+}
 
 .submit22{width: auto; height:70px; float: left; display: block; padding:0px 70px 0px 20px; background:#ffc103 url(../images/arrow2.png) 93% 52% no-repeat ; border:0px solid #0492cf; border-radius:3px; font-size:21px; font-weight:600; color:#000; text-transform:uppercase; position:relative; cursor:pointer; outline:none; -webkit-transition:all 0.3s;
 -moz-transition:all 0.3s;
@@ -90,7 +98,7 @@ transition:all 0.3s;}
 .prog_prev{position:absolute; cursor:pointer; width:15px; height:32px; z-index:9; font-size:0px; top:36%; margin-top:-16px; left:-15px; background: url(../images/prev-next.png)no-repeat left top;}
 .prog_next{position:absolute; cursor:pointer; width:15px; height:32px;  z-index:9; font-size:0px; top:36%; margin-top:-16px; right:-15px; background:url(../images/prev-next.png)no-repeat -35px top;}
 
-.truck-box figure{width: 50%; height: auto; float: left; display: block; background: #fdbb2d;  padding:40px 10px; box-sizing: border-box;}
+.truck-box figure{width: 50%; height: auto; float: left; display: block; background: #fdbb2d; margin:0 !important; padding:40px 10px; box-sizing: border-box;}
 .truck-box figure span{ width: 100%; max-width: 425px; margin: 0 auto; text-align: center; display: block;}
 .truck-box figure span h2{ width: 100%; height: auto; float: left; display: block; font-size: 25px; font-weight: 600; color: #000; line-height:28px; text-align: center; text-transform: uppercase; padding: 0 0 25px 0; box-sizing: border-box;}
 .truck-box figure span p{ width: 100%; height: auto; float: left; display: block; font-size: 15px; font-weight: 400; color: #FFF; line-height:20px; text-align: center; text-transform: capitalize; padding: 0 3% 40px 3%; box-sizing: border-box;}
@@ -176,13 +184,13 @@ transition:all 0.3s;}
 }
 
 @media screen and (max-width:568px){
-.form-box aside {width: 100%;height: 40px; margin-bottom: 10px; padding-right: 0px;}
+.form-box aside {width: 100%;  margin-bottom: 10px; padding-right: 0px;}
 	.form-box aside input[type="text"] {height: 40px;font-size: 16px; line-height: 40px; 	}
 	.textBox {width: 100%;height: 40px; background: #efefef url(../images/date-icon.png) 95% 9px no-repeat!important;}
 	.banner-box {height: auto; padding-bottom: 100px;}
-	.submit22 {height: 40px;font-size: 16px;}
+	.submit22 { font-size: 16px;}
 	.truck-box aside {width: 100%}
-	.truck-box figure {width: 100%;}
+	.truck-box figure {width: 100%; margin:0 !important;}
 	.our-team li {padding: 38px 20px 90px 20px;}
 	.box876 { padding-top: 50px;}
 	.form-box .custom-select { color: #595959; font-size: 17px;height: 40px;background: #efefef url(../images/downArrow4.png) no-repeat 95% 13px;

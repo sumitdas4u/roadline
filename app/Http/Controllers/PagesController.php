@@ -8,10 +8,11 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $page_title = 'Dashboard';
-        $page_description = 'Some description for the page';
+         $page_title = 'Online Load, Truck Booking, Transporters, Logistics';
+        $page_description = 'Online Load, Truck Booking, Transporters, Logistics';
+        return view('pages.home', compact('page_title', 'page_description','payments'));
 
-        return view('pages.home', compact('page_title', 'page_description'));
+
     }
 
     public function enquiry_popoup()

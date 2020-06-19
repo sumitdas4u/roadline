@@ -28,7 +28,7 @@ const rimraf = require('rimraf');
     'resources/home-theme/css/slectbox.css',
 ], 'public/css/home.css');
 mix.scripts([
-    'resources/home-theme/js/jquery.min.js',
+
     'resources/home-theme/js/common.js',
     'resources/home-theme/js/slick.min.js',
     'resources/home-theme/js/nav.js',

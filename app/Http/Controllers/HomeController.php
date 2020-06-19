@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 
 class HomeController extends Controller
@@ -35,10 +36,10 @@ class HomeController extends Controller
     }
     public function dashboard()
     {
-        $page_title = 'Dashboard';
+     /*   $page_title = 'Dashboard';
         $page_description = 'Some description for the page';
-        return view('pages.dashboard', compact('page_title', 'page_description'));
-
+        return view('pages.dashboard', compact('page_title', 'page_description'));*/
+        return Redirect::to('enquiry');
 
     }
 

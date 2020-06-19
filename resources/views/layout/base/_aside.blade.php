@@ -4,6 +4,7 @@
     $kt_logo_image = 'logo-light.png';
 @endphp
 
+
 @if (config('layout.brand.self.theme') === 'light')
     @php $kt_logo_image = 'logo-dark.png' @endphp
 @elseif (config('layout.brand.self.theme') === 'dark')
@@ -15,7 +16,7 @@
     {{-- Brand --}}
     <div class="brand flex-column-auto {{ Metronic::printClasses('brand', false) }}" id="kt_brand">
         <div class="brand-logo">
-            <a href="{{ url('/') }}">
+            <a href="{{ route('enquiry.index')}}">
                 <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/'.$kt_logo_image) }}"/>
             </a>
         </div>
@@ -47,11 +48,13 @@
 
             <ul class="menu-nav {{ Metronic::printClasses('aside_menu_nav', false) }}">
 
-                @if (Auth::user()->role == 1)
+                @if (Auth::user()->role == 2)
+                    {{ Menu::renderVerMenu(config('menu_admin_aside.items')) }}
+                @elseif (Auth::user()->role == 1)
                     {{ Menu::renderVerMenu(config('menu_owner_aside.items')) }}
                 @elseif(Auth::user()->role == 0)
                     {{ Menu::renderVerMenu(config('menu_aside.items')) }}
-                    @endif
+                @endif
 
             </ul>
         </div>

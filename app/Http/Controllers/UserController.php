@@ -28,7 +28,32 @@ class UserController extends Controller
       //  $this->currentUser =Auth::user();
     }
 
+    public function emailExists(Request $request)
+    {
+        if($request->code){
 
+            return response()->json(array(
+                'valid' => true,
+            ));
+
+        }
+        $email=  User::where('email', '=', $request->email)
+            ->first();
+
+        if(!is_null($email)) {
+            return response()->json(array(
+                'valid' => false,
+            ));
+
+        }else{
+            return response()->json(array(
+                'valid' => true,
+            ));
+
+
+        }
+
+    }
 
     function verifyMobile(Request $request){
 
