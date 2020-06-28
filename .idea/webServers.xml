@@ -10,7 +10,7 @@
         </fileTransfer>
       </webServer>
       <webServer id="96961551-9871-4267-95f2-561a1589ef43" name="EDUFAIR AWS" url="http://3.7.98.57">
-        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="3.7.98.57" port="2223" sshConfigId="d08927e0-380a-4871-95c4-26c6dc7163a7" sshConfig="EDUFAIR AWS" keyPair="true">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="3.7.98.57" port="2223" sshConfigId="44b40870-b17a-456b-94be-9a9c0e230a0f" sshConfig="EDUFAIR AWS" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
@@ -18,6 +18,13 @@
       </webServer>
       <webServer id="30e60669-d5fb-4204-a253-eba426144167" name="loadline" url="http://loadline.in">
         <fileTransfer host="loadline.in" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="85921e5b-6399-45b9-b4d9-bb6ea5b29fad" name="68.183.80.98">
+        <fileTransfer accessType="SFTP" host="68.183.80.98" port="22" sshConfigId="d11415f5-3e6d-4e73-9d7a-b01cad9cf1f7" sshConfig="vfair@68.183.80.98:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

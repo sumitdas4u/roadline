@@ -93,6 +93,23 @@
                                     </span>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="exampleTextarea">Payment Status</label>
+                        <select name="status"
+                                class="form-control form-control-solid" rows="3"
+                                class="form-control form-control-solid  @error('status') is-invalid @enderror"
+                                 >
+                            <option value="1" {{ $payment->status ==1 ? 'selected' : '' }} >Confirmation Pending</option>
+                            <option value="2" {{ $payment->status ==2 ? 'selected' : '' }}>Payment Received</option>
+
+                        </select>
+
+                        @error('status')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
 
 
 

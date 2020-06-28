@@ -121,6 +121,7 @@ class PaymentController extends Controller
             $payment->amount         = $request->amount;
             $payment->payment_date         =  $request->payment_date ;
             $payment->payment_mode         = $request->payment_mode;
+            $payment->status         = $request->status;
             $payment->save();
 
             return Redirect::to('payment')->with('status', 'payment entry succesfully changed');

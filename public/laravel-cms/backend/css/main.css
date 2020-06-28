@@ -1,0 +1,142 @@
+.container {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Arial"
+}
+
+a {
+  color: #565658;
+}
+
+a:hover,
+a.delete-link:hover,
+.nav-tabs a:hover {
+  color: #ef237b;
+}
+
+.all-pages a.text-secondary:hover,
+.all-settings a.text-secondary:hover {
+  color: #007bff !important;
+}
+
+a.delete-link {
+  color: #cccccc;
+}
+
+
+.nav-tabs a {
+  color: #379dd8;
+}
+
+.nav-tabs .nav-link.disabled {
+  color: #c0c0c0;
+}
+
+/* dashboard */
+
+.latest span.badge {
+  width: 1.15rem;
+  padding: .25em .1em;
+}
+
+.latest ul li:nth-child(2) .badge-secondary {
+  background-color: #379dd8;
+}
+
+.latest ul li:nth-child(3) .badge-secondary {
+  background-color: #8dc63a;
+}
+
+.latest ul li:nth-child(4) .badge-secondary {
+  background-color: #f59516;
+}
+
+.menu-links .dropdown-item {
+  padding: 0.25rem 1rem;
+}
+
+
+
+/* file manager */
+
+.files .file:hover {
+  background-color: rgba(243, 247, 242, 0.658);
+}
+
+.files .fa-file-image {
+  color: #6f6feb;
+}
+
+.files .fa-file-word {
+  color: #08569f;
+}
+
+.files .fa-file-excel {
+  color: #11733a;
+}
+
+.files .fa-file-archive {
+  color: rgba(151, 136, 2, 0.753);
+}
+
+.files .fa-file-video {
+  color: #dd6808;
+}
+
+.files .fa-file-powerpoint {
+  color: rgb(210, 70, 37)
+}
+
+.files .fa-file-pdf {
+  color: #cc0a0b;
+}
+
+.files .fa-file-alt {
+  color: rgb(136, 135, 135);
+}
+
+.files a.preview_link:hover,
+.files a.preview_link:hover i {
+  color: #cc0a0b !important;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+/* editor */
+.note-editable a {
+  color: #007bff;
+}
+
+pre.prettyprint {
+  padding: 2px;
+  border: 1px solid #ddd;
+  background-color: rgb(251, 251, 251);
+}
+
+
+.show-help {
+  cursor: help;
+}
+
+.cms-version-notice .major-info {
+  display: none;
+  padding-top: .5rem;
+}
+
+/* small screen */
+@media screen and (max-width: 700px) {
+  .menu-links {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+
+.search-results mark {
+  padding: 0;
+  background-color: rgb(247, 247, 247);
+  color: rgb(185, 2, 2);
+}

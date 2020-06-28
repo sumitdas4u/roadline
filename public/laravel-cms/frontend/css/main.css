@@ -1,0 +1,66 @@
+body {
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Arial"
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #e7eaec;
+  color: black;
+}
+
+.breadcrumb {
+  background-color: unset;
+  margin-top: 2rem;
+  padding-left: 0;
+}
+
+
+.breadcrumb-item+.breadcrumb-item::before {
+  content: ">"
+}
+
+img.top-logo {
+  max-height: 100px;
+}
+
+body.cms-page .main-title h1 {
+  padding-bottom: 1.1rem;
+}
+
+.search-results mark {
+  padding: 0;
+  background-color: rgb(247, 247, 247);
+  color: rgb(185, 2, 2);
+}
+
+/*
+.top-nav .dropdown:hover .dropdown-menu {
+    display: block !important;
+}
+.top-nav .dropdown > .dropdown-toggle:active {
+    pointer-events: none;
+}
+*/
+
+/* code prettyprint */
+pre.prettyprint {
+  padding: 2px;
+  border: 1px solid #888;
+  background-color: rgb(251, 251, 251);
+}
+
+pre li.L0,
+pre li.L1,
+pre li.L2,
+pre li.L3,
+pre li.L5,
+pre li.L6,
+pre li.L7,
+pre li.L8 {
+  list-style-type: decimal !important;
+  color: #999;
+}
+
+pre .pun {
+  color: #da3275;
+}

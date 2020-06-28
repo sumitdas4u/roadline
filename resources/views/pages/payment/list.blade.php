@@ -41,6 +41,7 @@
                     <th>Amount</th>
                     <th>Payment Date</th>
                     <th>Payment Mode</th>
+                    <th>Status</th>
                     <th>Date</th>
                     @if (Auth::user()->role ==2)
                     <th>Actions</th>
@@ -57,6 +58,17 @@
                         <td> {{ $payment->amount}}</td>
                         <td> {{ $payment->payment_date}}</td>
                         <td> {{ $payment->payment_mode}}</td>
+                        <td>
+                            <span class="label
+
+                                @if ($payment->status==1)
+                                label-error
+                                @else
+                                label-success
+                                @endif
+
+                                label-pill label-inline mr-2"> {{ $payment->status ==1 ? 'Pending Confirmation' : 'Payment Confirmed'}}</span>
+                        </td>
                         <td> {{ $payment->created_at}}</td>
                         @if (Auth::user()->role ==2)
                         <td  >
