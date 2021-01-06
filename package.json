@@ -117,7 +117,7 @@
         "wnumb": "^1.1.0"
     },
     "devDependencies": {
-        "axios": "^0.19",
+        "axios": "^0.21",
         "bootstrap": "^4.5.0",
         "cross-env": "^7.0",
         "jquery": "^3.2",
