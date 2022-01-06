@@ -109,7 +109,7 @@
         "tooltip.js": "^1.2.0",
         "typeahead.js": "^0.11.1",
         "underscore": "^1.8.3",
-        "uppy": "^1.14.1",
+        "uppy": "^2.3.3",
         "vue-multiselect": "^2.1.6",
         "vue2-google-maps": "^0.10.7",
         "waypoints": "^4.0.1",
