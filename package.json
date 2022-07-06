@@ -75,7 +75,7 @@
         "jkanban": "^1.2.1",
         "jquery": "^3.5.1",
         "jquery-form": "^4.2.2",
-        "jquery-validation": "1.19.0",
+        "jquery-validation": "1.19.5",
         "jquery.repeater": "^1.2.1",
         "jqvmap": "^1.5.1",
         "jstree": "^3.3.9",
